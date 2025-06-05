@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
+
   return (
     <header>
       <nav className="nav-container">
@@ -11,11 +17,18 @@ const Header = () => {
           </svg>
           <span>Dilibe</span>
         </div>
-        <ul className="nav-links">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/projects">Projects</Link></li>
-          <li><Link to="https://medium.com/@dilibe">Blogs</Link></li>
+        <button className="mobile-menu-button" onClick={toggleMenu} aria-label="Toggle menu">
+          <div className={`hamburger ${isMenuOpen ? 'open' : ''}`}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+        <ul className={`nav-links ${isMenuOpen ? 'show' : ''}`}>
+          <li><Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
+          <li><Link to="/about" onClick={() => setIsMenuOpen(false)}>About</Link></li>
+          <li><Link to="/projects" onClick={() => setIsMenuOpen(false)}>Projects</Link></li>
+          <li><Link to="https://medium.com/@dilibe" onClick={() => setIsMenuOpen(false)}>Blogs</Link></li>
         </ul>
       </nav>
     </header>

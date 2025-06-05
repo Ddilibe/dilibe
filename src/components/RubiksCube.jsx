@@ -2,21 +2,21 @@ import React, { useEffect, useRef, useState } from 'react'
 
 const RubiksCube = () => {
   const containerRef = useRef(null)
-  const [isMouseDown, setIsMouseDown] = useState(false)
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const [isInteracting, setIsInteracting] = useState(false)
+  const [interactionPosition, setInteractionPosition] = useState({ x: 0, y: 0 })
   const [isSpinning, setIsSpinning] = useState(true)
+  const [rotation, setRotation] = useState({ x: -20, y: -20 })
 
   useEffect(() => {
     const faces = ['front', 'back', 'right', 'left', 'top', 'bottom']
     const colors = ['red', 'orange', 'blue', 'green', 'yellow', 'white']
     
-    // Create cube faces
     faces.forEach((face, index) => {
       const faceElement = document.createElement('div')
       faceElement.className = `cube-face cube-face--${face}`
       
       const transforms = {
-        front: 'rotateY(0deg) translateZ(100px)',
+        front: 'translateZ(100px)',
         back: 'rotateY(180deg) translateZ(100px)',
         right: 'rotateY(90deg) translateZ(100px)',
         left: 'rotateY(-90deg) translateZ(100px)',
@@ -26,7 +26,6 @@ const RubiksCube = () => {
       
       faceElement.style.transform = transforms[face]
 
-      // Create 9 cells for each face
       for (let i = 0; i < 9; i++) {
         const cell = document.createElement('div')
         cell.className = `cube-cell color-${colors[index]}`
@@ -37,33 +36,53 @@ const RubiksCube = () => {
 
       containerRef.current?.appendChild(faceElement)
     })
+
+    // Set initial rotation
+    if (containerRef.current) {
+      containerRef.current.style.transform = `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`
+    }
   }, [])
 
-  const handleMouseDown = (e) => {
-    setIsMouseDown(true)
-    setMousePosition({ x: e.clientX, y: e.clientY })
+  const handleInteractionStart = (e) => {
+    e.preventDefault()
+    const position = {
+      x: e.type.includes('mouse') ? e.clientX : e.touches[0].clientX,
+      y: e.type.includes('mouse') ? e.clientY : e.touches[0].clientY
+    }
+    setIsInteracting(true)
+    setInteractionPosition(position)
     setIsSpinning(false)
   }
 
-  const handleMouseMove = (e) => {
-    if (!isMouseDown) return
+  const handleInteractionMove = (e) => {
+    e.preventDefault()
+    if (!isInteracting) return
 
-    const deltaX = e.clientX - mousePosition.x
-    const deltaY = e.clientY - mousePosition.y
-
-    if (containerRef.current) {
-      const currentTransform = containerRef.current.style.transform || ''
-      const rotateX = parseFloat(currentTransform.match(/rotateX\(([-\d.]+)deg\)/) || [0, 0])[1]
-      const rotateY = parseFloat(currentTransform.match(/rotateY\(([-\d.]+)deg\)/) || [0, 0])[1]
-
-      containerRef.current.style.transform = `rotateX(${rotateX - deltaY * 0.5}deg) rotateY(${rotateY + deltaX * 0.5}deg)`
+    const position = {
+      x: e.type.includes('mouse') ? e.clientX : e.touches[0].clientX,
+      y: e.type.includes('mouse') ? e.clientY : e.touches[0].clientY
     }
 
-    setMousePosition({ x: e.clientX, y: e.clientY })
+    const deltaX = position.x - interactionPosition.x
+    const deltaY = position.y - interactionPosition.y
+    const sensitivity = 0.5
+
+    if (containerRef.current) {
+      const newRotation = {
+        x: rotation.x - deltaY * sensitivity,
+        y: rotation.y + deltaX * sensitivity
+      }
+      
+      setRotation(newRotation)
+      containerRef.current.style.transform = `rotateX(${newRotation.x}deg) rotateY(${newRotation.y}deg)`
+    }
+
+    setInteractionPosition(position)
   }
 
-  const handleMouseUp = () => {
-    setIsMouseDown(false)
+  const handleInteractionEnd = (e) => {
+    e.preventDefault()
+    setIsInteracting(false)
     setIsSpinning(true)
   }
 
@@ -72,10 +91,14 @@ const RubiksCube = () => {
       <div
         ref={containerRef}
         className={`cube-container ${isSpinning ? 'spin' : ''}`}
-        onMouseDown={handleMouseDown}
-        onMouseMove={handleMouseMove}
-        onMouseUp={handleMouseUp}
-        onMouseLeave={handleMouseUp}
+        onMouseDown={handleInteractionStart}
+        onMouseMove={handleInteractionMove}
+        onMouseUp={handleInteractionEnd}
+        onMouseLeave={handleInteractionEnd}
+        onTouchStart={handleInteractionStart}
+        onTouchMove={handleInteractionMove}
+        onTouchEnd={handleInteractionEnd}
+        onTouchCancel={handleInteractionEnd}
       />
     </div>
   )

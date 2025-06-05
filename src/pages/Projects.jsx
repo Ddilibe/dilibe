@@ -124,8 +124,8 @@ const Projects = () => {
                   <h3 className="project-title">{project.title}</h3>
                   <p className="project-description">
                   {project.description.length > 150 
-                      ? `${project.description.substring(0, 150)}...` 
-                      : project.description}
+                  ? `${project.description.substring(0, 150)}...` 
+                  : project.description}
                   </p>
                   <p className="project-tech">{project.tech}</p>
                 </div>
