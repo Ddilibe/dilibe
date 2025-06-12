@@ -175,7 +175,6 @@ const Projects = () => {
             <a
               href={modalData.link}
               className="modal-link"
-              target="_blank"
               rel="noopener noreferrer"
             >
               View Project
