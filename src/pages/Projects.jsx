@@ -45,8 +45,8 @@ const Projects = () => {
       {
         title: "CounterFactual Regret Minimization",
         description: "This project focused on developing an AI agent for Texas Hold'em poker, a complex imperfect-information game, by implementing the Monte Carlo Counterfactual Regret Minimization (MCCFR) algorithm. The objective was to train an AI capable of near-optimal play through iterative self-play and systematic regret minimization. MCCFR's sampling approach was crucial for efficiently navigating poker's vast game tree, allowing the algorithm to refine its strategy and converge on a highly effective, unexploitable playing style by focusing computational resources on relevant decision points. This work demonstrated practical application of advanced game theory algorithms and efficient computational strategies for complex probabilistic scenarios.",
-        tech: "Tech: Distributed Systems, Algorithms",
-        link: "https://example.com/paper1"
+        tech: "Tech: Python, Numpy, Unit Testing, Git, CLI, CFR",
+        link: "projects/pokerai"
       }
     ],
     ml: [
@@ -62,6 +62,14 @@ const Projects = () => {
         tech: "Tech: Python, PyTorch, Pandas, Scikit-learn, AWS",
         link: "https://example.com/dashboard"
       }
+    ],
+    frontend: [
+      {
+        title: "Solar System",
+        description: "",
+        tech: "Tech: Typescript, Javascript, Three JS",
+        link: "https://dplanet.netlify.app/"
+      }
     ]
   }
 
@@ -74,15 +82,15 @@ const Projects = () => {
             <h3 className="category-title">Software Development</h3>
             <div className="projects-grid">
               {projects.software.map((project, index) => (
-                <div 
+                <div
                   key={`software-${index}`}
                   className="project-card"
                   onClick={() => handleProjectClick(project)}
                 >
                   <h3 className="project-title">{project.title}</h3>
                   <p className="project-description">
-                    {project.description.length > 150 
-                      ? `${project.description.substring(0, 150)}...` 
+                    {project.description.length > 150
+                      ? `${project.description.substring(0, 150)}...`
                       : project.description}
                   </p>
                   <p className="project-tech">{project.tech}</p>
@@ -90,20 +98,20 @@ const Projects = () => {
               ))}
             </div>
           </div>
-          
+
           <div className="category">
             <h3 className="category-title">Research Papers</h3>
             <div className="projects-grid">
               {projects.research.map((project, index) => (
-                <div 
+                <div
                   key={`research-${index}`}
                   className="project-card"
                   onClick={() => handleProjectClick(project)}
                 >
                   <h3 className="project-title">{project.title}</h3>
                   <p className="project-description">
-                  {project.description.length > 150 
-                      ? `${project.description.substring(0, 150)}...` 
+                    {project.description.length > 150
+                      ? `${project.description.substring(0, 150)}...`
                       : project.description}
                   </p>
                   <p className="project-tech">{project.tech}</p>
@@ -111,27 +119,49 @@ const Projects = () => {
               ))}
             </div>
           </div>
-          
+
           <div className="category">
             <h3 className="category-title">Machine Learning</h3>
             <div className="projects-grid">
               {projects.ml.map((project, index) => (
-                <div 
+                <div
                   key={`ml-${index}`}
                   className="project-card"
                   onClick={() => handleProjectClick(project)}
                 >
                   <h3 className="project-title">{project.title}</h3>
                   <p className="project-description">
-                  {project.description.length > 150 
-                  ? `${project.description.substring(0, 150)}...` 
-                  : project.description}
+                    {project.description.length > 150
+                      ? `${project.description.substring(0, 150)}...`
+                      : project.description}
                   </p>
                   <p className="project-tech">{project.tech}</p>
                 </div>
               ))}
             </div>
           </div>
+
+          <div className="category">
+            <h3 className="category-title">Frontend Projects</h3>
+            <div className="projects-grid">
+              {projects.frontend.map((project, index) => (
+                <div
+                  key={`frontend-${index}`}
+                  className="project-card"
+                  onClick={() => handleProjectClick(project)}
+                >
+                  <h3 className="project-title">{project.title}</h3>
+                  <p className="project-description">
+                    {project.description.length > 150
+                      ? `${project.description.substring(0, 150)}...`
+                      : project.description}
+                  </p>
+                  <p className="project-tech">{project.tech}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -142,10 +172,10 @@ const Projects = () => {
             <h3 className="modal-title">{modalData.title}</h3>
             <p className="modal-description">{modalData.description}</p>
             <p className="modal-tech">{modalData.tech}</p>
-            <a 
-              href={modalData.link} 
-              className="modal-link" 
-              target="_blank" 
+            <a
+              href={modalData.link}
+              className="modal-link"
+              target="_blank"
               rel="noopener noreferrer"
             >
               View Project
