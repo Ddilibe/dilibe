@@ -1,7 +1,7 @@
 # netlify.toml
 
 [build]
-  command = "npm build && npm run dev"
+  command = "npm run build && npm run dev"
   publish = "dist"
 
 
