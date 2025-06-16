@@ -1,0 +1,26 @@
+# netlify.toml
+
+# This section defines build settings for your project.
+# It's good practice to include, even if just for default values.
+[build]
+  # The command Netlify runs to build your site.
+  # Adjust this based on your actual build command (e.g., `npm run build`, `yarn build`, `cargo build --release`).
+  # For a Rust WASM project, it might be something like:
+  # command = "wasm-pack build --target web --out-dir build && cp static/* build/"
+  # Or if you have a separate build script:
+  # command = "./build-script.sh"
+  # If your project is pure Rust/WASM without a Node.js build step,
+  # and your static assets are copied to the publish directory, specify that command.
+  command = "" # Leave empty if you configure this in Netlify UI or have a simple static site
+
+  # The directory where your compiled site output will be.
+  # This is crucial. Common values are "build", "dist", "public", "out".
+  # For Rust WASM, ensure your build process outputs to this directory.
+  publish = "dist" # IMPORTANT: Set this to your actual publish directory!
+
+# This section defines redirect rules. This is the core solution for the 404 problem.
+[[redirects]]
+  from = "/*"       # Matches all incoming requests
+  to = "/index.html" # Rewrites them to serve your index.html
+  status = 200       # Specifies an internal rewrite (URL in browser stays the same)
+  force = false      # (Optional) Set to true to override existing files, usually not needed here.

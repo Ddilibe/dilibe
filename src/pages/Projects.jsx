@@ -26,7 +26,7 @@ const Projects = () => {
         title: "Cryptocurrency Telegram Bot",
         description: "Developed a real-time cryptocurrency update bot for Telegram, designed to provide users with up-to-the-minute information on prices, market trends, and analytical tools. The bot's backend leverages robust web scraping techniques, primarily utilizing Scrapy for efficient data extraction and Selenium for handling dynamic content, to collect data from various cryptocurrency exchanges and news sources. This solution effectively serves over 300 active monthly users, demonstrating proficiency in data acquisition, bot development, and delivering critical real-time information to a user base.",
         tech: "Tech: Python, Scrapy, Selenium, Docker",
-        link: "https://example.com/orchestrator"
+        link: "https://t.me/Test_pumpdotfun_bot"
       },
       {
         title: "CASSIA (Advanced Chess Engine)",
@@ -38,7 +38,7 @@ const Projects = () => {
         title: "FINDERS KEEPERS (AI-Powered Dating Platform)",
         description: "This project involved the development of a machine learning-driven dating application The platform's core functionality is to match users based on personality traits, interests, and behavioral data, employing sophisticated algorithms such as collaborative filtering and neural networks. For the machine learning component, Python and PyTorch were utilized for model development. The application's architecture included React for the frontend and Flask for the backend, successfully achieving 85% match accuracy during user testing.",
         tech: "Tech: Python, PyTorch, React, Flask, Docker",
-        link: "https://example.com/finders-keepers"
+        link: "https://github.com/Ddilibe/FK"
       }
     ],
     research: [
@@ -54,13 +54,13 @@ const Projects = () => {
         title: "Climate Pattern Classification Model",
         description: "This project involved the design and deployment of a machine learning model engineered to classify weather data and identify distinct climate patterns or regimes. The model's successful implementation significantly improved data analysis efficiency by 92%, demonstrating its capability to process complex meteorological datasets and extract meaningful insights automatically. This work highlights expertise in applying machine learning for environmental data analysis and optimizing scientific data processing workflows.",
         tech: "Tech: Python, Machine Learning, AWS, Pytorch",
-        link: "https://example.com/dashboard"
+        link: "https://colab.research.google.com/drive/1zJbnkl4V9AjwInMRJGZi60n-hxsfoQ8v"
       },
       {
         title: "Tesla Stock Price Forecasting Algorithm",
         description: "Developed a predictive algorithm for Tesla stock price forecasting, achieving 94% accuracy in backtesting. This robust solution was built using Python, leveraging the powerful deep learning capabilities of PyTorch for model construction, alongside Pandas for data manipulation and scikit-learn for machine learning utilities. The project demonstrates strong skills in financial data analysis, predictive modeling, and the application of advanced machine learning frameworks for real-world forecasting challenges.",
         tech: "Tech: Python, PyTorch, Pandas, Scikit-learn, AWS",
-        link: "https://example.com/dashboard"
+        link: "https://colab.research.google.com/drive/1xre7LZ2U9drOzZGDTflcrmfpyeCZceIQ"
       }
     ],
     frontend: [
