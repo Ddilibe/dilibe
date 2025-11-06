@@ -29,8 +29,8 @@ const PokerAI = () => {
                         through self-play and provides a challenging opponent for human players.
                     </p>
                     <div className="pokerbuttons">
-                        <a href="https://github.com/yourusername/pockergame" className="pokerbutton">View on GitHub</a>
-                        <a href="#demo" className="pokerbutton">Live Demo</a>
+                        <a href="#" className="pokerbutton">View on GitHub</a>
+                        <a href="#" className="pokerbutton">Live Demo</a>
                     </div>
                 </div>
                 <div className="pokertech-stack">
