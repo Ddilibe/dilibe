@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Projects from './pages/Projects'
 import PokerAI from './pages/pokerai'
+import Docs from './pages/Docs'
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/projects/pokerai" element={<PokerAI />} />
+        <Route path="/docs" element={<Docs />} />
+        <Route path="/docs/detris" />
       </Routes>
       <Footer />
     </>
