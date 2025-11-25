@@ -2,11 +2,12 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Footer = () => {
+  let date = new Date();
   return (
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-left">
-          <p className="copyright">© 2024 Dilibe Franklin. All rights reserved.</p>
+          <p className="copyright">© {date.getFullYear()} Dilibe Franklin. All rights reserved.</p>
         </div>
         <div className="footer-right">
           <nav className="footer-nav">
