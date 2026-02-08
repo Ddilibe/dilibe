@@ -10,11 +10,11 @@ const RubiksCube = () => {
   useEffect(() => {
     const faces = ['front', 'back', 'right', 'left', 'top', 'bottom']
     const colors = ['red', 'orange', 'blue', 'green', 'yellow', 'white']
-    
+
     faces.forEach((face, index) => {
       const faceElement = document.createElement('div')
       faceElement.className = `cube-face cube-face--${face}`
-      
+
       const transforms = {
         front: 'translateZ(100px)',
         back: 'rotateY(180deg) translateZ(100px)',
@@ -23,18 +23,19 @@ const RubiksCube = () => {
         top: 'rotateX(90deg) translateZ(100px)',
         bottom: 'rotateX(-90deg) translateZ(100px)'
       }
-      
-      faceElement.style.transform = transforms[face]
+
+      faceElement.style.transform = transforms[face];
 
       for (let i = 0; i < 9; i++) {
         const cell = document.createElement('div')
         cell.className = `cube-cell color-${colors[index]}`
-        cell.dataset.faceIndex = index
-        cell.dataset.cellIndex = i
+        cell.dataset.faceIndex = String(index);
+        cell.dataset.cellIndex = String(i);
         faceElement.appendChild(cell)
       }
-
-      containerRef.current?.appendChild(faceElement)
+      if (containerRef.current) {
+        containerRef.current.appendChild(faceElement)
+      }
     })
 
     // Set initial rotation
@@ -72,7 +73,7 @@ const RubiksCube = () => {
         x: rotation.x - deltaY * sensitivity,
         y: rotation.y + deltaX * sensitivity
       }
-      
+
       setRotation(newRotation)
       containerRef.current.style.transform = `rotateX(${newRotation.x}deg) rotateY(${newRotation.y}deg)`
     }
