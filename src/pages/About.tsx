@@ -56,7 +56,7 @@ const About = () => {
     {
       degree: 'Master of Science in Financial Engineering',
       institution: 'Quant World University',
-      period: '2025 - Present',
+      period: '2026 - Present',
       focus: 'Financial Engineering, AI and Machine Learning'
     },
     {
