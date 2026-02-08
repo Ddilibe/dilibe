@@ -62,7 +62,7 @@ const About = () => {
     {
       degree: 'Bachelor of Engineering in Mechanical Engineering',
       institution: 'University of Nigeria, Nsukka',
-      period: '2024',
+      period: '2018 -2024',
       focus: 'Graduated with Honors'
     }
   ]
