@@ -6,31 +6,37 @@ import { Separator } from '@/components/ui/separator'
 
 const About = () => {
   const skills = {
-    languages: ['Python', 'C', 'Rust', 'C++', 'JavaScript'],
-    frameworks: ['Django', 'Flask', 'PyTorch', 'Scikit-Learn'],
-    databases: ['PostgreSQL', 'MongoDB', 'Redis'],
-    cloud: ['Docker', 'Kubernetes'],
-    tools: ['Git', 'CI/CD', 'Linux']
+    languages: ['Python', 'C', 'C++', 'Rust', 'JavaScript', 'TypeScript', 'C#'],
+    frameworks: ['Django', 'Flask', 'FastAPI', 'React', 'Node.js', 'Express', 'PyTorch', 'Scikit-Learn', 'PySide6'],
+    databases: ['PostgreSQL', 'MongoDB', 'Redis', 'MySQL', 'SQLite'],
+    blockchain: ['Solana', 'Smart Contracts', 'Web3'],
+    cloud: ['Docker', 'Kubernetes', 'AWS'],
+    simulation: ['COMSOL Multiphysics', 'Finite Element Analysis'],
+    ml: ['Machine Learning', 'Deep Learning', 'Neural Networks', 'NLP', 'Sentiment Analysis', 'Reinforcement Learning'],
+    data: ['NumPy', 'Pandas', 'Matplotlib', 'SciPy', 'Scikit-Learn'],
+    tools: ['Git', 'CI/CD', 'Linux', 'Bash', 'Arduino'],
+    finance: ['Technical Analysis', 'Algorithmic Trading', 'Financial Engineering', 'Risk Management'],
+    other: ['RESTful APIs', 'System Analysis', 'ERP Development', 'Distributed Systems', 'Event-Driven Architecture']
   }
 
   const experiences = [
     {
-      title: 'System Analyst',
-      company: 'Chartered Institute of Statisticians of Nigeria',
-      period: 'November 2025 - Present',
-      description: 'Analyzing and optimizing statistical systems and data infrastructure.'
-    },
-    {
-      title: 'Researcher',
-      company: 'Center for Satellite and Technology Development, Nigeria',
+      title: 'Research Engineer & Technical Tutor',
+      company: 'Center for Satellite and Technology Development (NASRDA), Nigeria',
       period: 'June 2025 - April 2026',
-      description: 'PPA during NYSC studies, conducting research in satellite technology and applications.'
+      description: 'Serving during NYSC, conducting R&D in satellite design, fabrication, testing and integration. Delivering technical training to staff and interns on programming, data analysis, and space technology.'
     },
     {
-      title: ' Software Engineer',
+      title: 'System Analyst',
+      company: 'Chartered Institute of Statisticians of Nigeria (CISON)',
+      period: 'November 2025 - Present',
+      description: 'Analyzing and optimizing information systems, databases and workflows supporting membership registration, certification tracking, examination administration, and event management.'
+    },
+    {
+      title: 'Software Engineer & Technical Trainer',
       company: 'Meliora Business Solutions Limited',
-      period: 'January, 2025 - April, 2025',
-      description: 'Leading development of distributed systems, cloud and desktop applications.'
+      period: '2025',
+      description: 'Leading development of distributed systems, cloud and desktop applications. Delivering hands-on training programs covering data analysis, C# programming, and software development to students and professionals.'
     },
     {
       title: 'HNG Finalist',
@@ -42,13 +48,37 @@ const About = () => {
       title: 'Freelance Software Engineer',
       company: 'Cypher',
       period: '2023 - Present',
-      description: 'Architected and implemented scalable backend and AI services.'
+      description: 'Architected and implemented scalable backend and AI services, including a real-time crypto bot serving 300+ monthly users and various production-grade systems.'
+    },
+    {
+      title: 'Independent Trader & Market Analyst',
+      company: 'Self-employed',
+      period: '2024',
+      description: 'Conducted technical and fundamental analysis across forex, stocks, and crypto markets. Developed systematic trading strategies using technical indicators and rigorous risk management practices.'
+    },
+    {
+      title: 'Software Developer',
+      company: 'Nanocodes Programming Limited',
+      period: '2023',
+      description: 'Engineered robust backend systems and APIs using Python/Django. Delivered scalable web applications for clients across business, government, and enterprise sectors.'
     },
     {
       title: 'Software Engineer Intern',
       company: 'ALX Africa',
       period: '2022 - 2023',
-      description: 'Full-stack development of software applications.'
+      description: 'Built a Unix-like shell in C, a Monty bytecode interpreter, an AirBnB clone with Python/JSON persistence, and implemented core data structures from scratch.'
+    },
+    {
+      title: 'Software Developer Intern',
+      company: 'i4g Zuri Training',
+      period: '2021',
+      description: 'Gained proficiency in full-stack development including Python, Flask/Django, RESTful APIs, HTML5, CSS3, and JavaScript. Built multiple responsive websites and interactive applications.'
+    },
+    {
+      title: 'Industrial Training Intern',
+      company: 'Solive Oil (Wilson Group Nigeria Limited)',
+      period: '2023',
+      description: 'Supported daily production operations across refining, mixing, packaging, and quality assurance lines. Developed practical understanding of industrial machinery operation and process optimization.'
     }
   ]
 
@@ -131,10 +161,13 @@ const About = () => {
                 </div>
                 <div className="md:col-span-2 space-y-4 text-gray-700 dark:text-gray-300">
                   <p>
-                    I am a Software Engineer and Researcher with over 4 years of experience in scalable distributed systems and cloud infrastructure. Currently working as System Analyst at the Chartered Institute of Statisticians of Nigeria and serving at the Center for Satellite and Technology Development, Nigeria (NYSC), I specialize in full-stack development, machine learning, and distributed architectures.
+                    I am a Principal Software Engineer and Researcher with over 4 years of experience building scalable distributed systems, cloud infrastructure, and production software. Currently working as a System Analyst at the Chartered Institute of Statisticians of Nigeria and serving as a Research Engineer at the Center for Satellite and Technology Development (NASRDA) during NYSC, I specialize in full-stack development, machine learning, and systems engineering.
                   </p>
                   <p>
-                    My work includes ML models for weather pattern classification (92% efficiency gain), a Tesla stock forecasting algorithm (94% accuracy), and production systems from hospital ERPs to crypto bots serving 300+ users. Notable projects include 'Finders Keepers' (AI dating platform), 'DChess' (Dirty Chess Game), and various open-source tools. I'm passionate about solving complex challenges and sharing knowledge through open-source contributions and technical writing.
+                    My work spans ML models for weather classification (92% efficiency gain), a 94% accurate Tesla stock forecasting algorithm, hospital ERPs, blockchain tokens on Solana, desktop LAN-sharing tools, and real-time crypto bots serving 300+ users. My engineering roots are grounded in a Second Class Upper in Mechanical Engineering from the University of Nigeria, Nsukka, where my final year research used COMSOL Multiphysics and Python to model lightning impacts on solar thermoelectric materials.
+                  </p>
+                  <p>
+                    I write technical articles on Medium, hold certifications from IBM, Google, Kaggle, and ALX, and am currently pursuing an MSc in Financial Engineering at Quant World University.
                   </p>
                 </div>
               </div>
@@ -142,46 +175,6 @@ const About = () => {
           </Card>
         </motion.div>
 
-        {/* Skills Section */}
-        <motion.div variants={itemVariants}>
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-3xl">Technical Skills</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {Object.entries(skills).map(([category, items]) => (
-                  <motion.div
-                    key={category}
-                    variants={itemVariants}
-                    className="space-y-3"
-                  >
-                    <h4 className="font-semibold text-lg text-blue-600 dark:text-blue-400 capitalize">
-                      {category}
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {items.map((skill, index) => (
-                        <motion.div
-                          key={index}
-                          variants={skillVariants}
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                        >
-                          <Badge
-                            variant="secondary"
-                            className="px-3 py-1 text-sm hover:bg-blue-100 dark:hover:bg-blue-900 transition-colors"
-                          >
-                            {skill}
-                          </Badge>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </motion.div>
 
         {/* Experience Section */}
         <motion.div variants={itemVariants}>
@@ -247,6 +240,46 @@ const About = () => {
                     <p className="text-gray-700 dark:text-gray-300 mt-2">
                       {edu.focus}
                     </p>
+                  </motion.div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+        {/* Skills Section */}
+        <motion.div variants={itemVariants}>
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-3xl">Technical Skills</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {Object.entries(skills).map(([category, items]) => (
+                  <motion.div
+                    key={category}
+                    variants={itemVariants}
+                    className="space-y-3"
+                  >
+                    <h4 className="font-semibold text-lg text-blue-600 dark:text-blue-400 capitalize">
+                      {category}
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {items.map((skill, index) => (
+                        <motion.div
+                          key={index}
+                          variants={skillVariants}
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          <Badge
+                            variant="secondary"
+                            className="px-3 py-1 text-sm hover:bg-blue-100 dark:hover:bg-blue-900 transition-colors"
+                          >
+                            {skill}
+                          </Badge>
+                        </motion.div>
+                      ))}
+                    </div>
                   </motion.div>
                 ))}
               </div>
